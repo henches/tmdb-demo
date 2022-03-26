@@ -1,38 +1,225 @@
-.App {
-  text-align: center;
+:root {
+  --text-normal: 0.9rem;
+  --text-small: 0.7rem;
+  --main-color: white;
+  --bg-color: #0D1D38;
+  --select-bg-color:  #3a475e;
+  --bg-color-active:  #6b7992;
+  --bg-color-disabled:  #0a2657;
+  --secondary-color: #586e94;
+  --small-screen: 710px;
+  --average-screen: 1260px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+	font-size: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  padding: 1rem;
+  background-color: var(--bg-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.display-zone {
+  width: 90%;
+  margin: 0 auto;
+}
+
+hr.solid {
+  border-top: 1px solid var(--secondary-color);
+  width: 100%;
+}
+
+.content {
   display: flex;
   flex-direction: column;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--main-color);
+}
+
+.best-movies-container {
+}
+
+.best-movies {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+}
+
+.movies-carousel {
+  position: relative;
+  height: 200px;
+  width: 90vw;
+  overflow: hidden;
+}
+
+.movies-carousel-track {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start ;
+  padding-inline-start: 0;
+  position: absolute;
 }
 
-.App-link {
-  color: #61dafb;
+.movies-carousel-track-mq {
+  transition: transform 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-carousel {
+  background-color: var(--select-bg-color);
+  border-radius: 100px;
+  width: 3.5rem;
+  height: 3rem;
+  margin: 1rem;
+  border-color: transparent;
 }
+
+.button-carousel:disabled,
+.button[disabled]{
+  background-color: var(--bg-color-disabled);
+}
+
+.button-carousel:active{
+  background-color: var(--bg-color-active);
+}
+
+.all-movies-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+}
+
+.filter-label {
+  font-size: var(--text-small);
+  color: var(--secondary-color);
+  margin: 0 2rem 0 0;
+}
+
+.genre-input {
+  font-size: var(--text-small);
+  color: var(--secondary-color);
+  border: solid 1px var(--secondary-color);
+  border-radius: 10px;
+  height: 2rem;
+  width: 9rem;
+  background-color: transparent;
+  padding: 0 0.5rem;
+}
+
+.genre-input option {
+  background-color: var(--bg-color);
+  color: var(--secondary-color);
+}
+
+.movies-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  flex-wrap: wrap;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.movies-list-mq {
+  width: calc(8rem * 10);
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 1rem;
+  width: 6rem;
+}
+
+.movie-image {
+  margin: 0 0 0.3rem 0;
+  border-radius: 5%;
+}
+
+.movie-title {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 10px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-year {
+  color: var(--secondary-color);
+  font-size: 10px;
+  margin: 0;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-pagination {
+  color: var(--select-bg-color);
+  font-weight: bold;
+  border: solid 1px var(--select-bg-color);
+  border-radius: 30%;
+  background-color: transparent; 
+  margin: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.button-pagination:hover {
+  background-color: rgb(64, 104, 116);
+}
+
+.active {
+  background-color: #8aa78b;
+  color: var(--main-color);
+}
+
+@media only screen and (max-width : 1260px) and (min-width: 710px) {
+  body {
+    padding: 1rem 1rem;
+    background-color: orange;
+  }
+
+  .movies-carousel-track-mq {
+    position: absolute;
+    touch-action: none;
+  }
+  
+  .movies-list-mq {
+    width: calc(8rem * 5);
+  }
+} 
+
+@media only screen and (max-width : 710px) {
+  body {
+    background-color: red;
+    padding: 1rem 1rem;
+  }
+
+  .button-carousel {
+    display: none;
+  }
+
+  .movies-carousel-track-mq {
+    position: absolute;
+    touch-action: none;
+  }
+  
+  .movies-list-mq {
+    width: calc(8rem * 2);
+  }
+} 
