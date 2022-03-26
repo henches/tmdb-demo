@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/tmdb-demo/static/css/main.81e5ec27.css",
+    "main.js": "/tmdb-demo/static/js/main.c6b78c23.js",
+    "static/media/logo.svg": "/tmdb-demo/static/media/logo.df6a0c85cce4914272b34ec2a7914cc2.svg",
+    "static/media/paginationpreviousarrow.svg": "/tmdb-demo/static/media/paginationpreviousarrow.c440b96ff30b7d6336682eecc843217e.svg",
+    "static/media/paginationnextarrow.svg": "/tmdb-demo/static/media/paginationnextarrow.5ff656c0ad9a3bafa4a1040117e2dbe5.svg",
+    "static/media/sliderpreviousarrow.svg": "/tmdb-demo/static/media/sliderpreviousarrow.8dc98231d3ab005304e4071c9729f295.svg",
+    "static/media/slidernextarrow.svg": "/tmdb-demo/static/media/slidernextarrow.c717575d2790c148e236dfd7bb7dd61a.svg",
+    "index.html": "/tmdb-demo/index.html",
+    "main.81e5ec27.css.map": "/tmdb-demo/static/css/main.81e5ec27.css.map",
+    "main.c6b78c23.js.map": "/tmdb-demo/static/js/main.c6b78c23.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81e5ec27.css",
+    "static/js/main.c6b78c23.js"
+  ]
+}
