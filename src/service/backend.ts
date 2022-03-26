@@ -14,7 +14,7 @@ export default function get(path: string, parameters?: string): Promise<any> { /
     return fetch(url, options)
         .then(response => {
             if (!response.ok) {
-                return Promise.reject({
+                return Promise.reject({ // TODO : Better error handling (this is a very basic one)
                     status_message: "Erreur API The Movie Database",
                     status_code: response.status
                 });
@@ -28,7 +28,6 @@ export default function get(path: string, parameters?: string): Promise<any> { /
             });
         })
 }
-
 
 export function getFullPosterPath(posterPath: string) {
     return URL_IMG + 'w92' + posterPath;
