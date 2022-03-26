@@ -1,20 +1,19 @@
 import * as React from 'react';
-import './App.css';
-import * as backendService from './backendService';
-import MoviesDTO from './DTO/MoviesDTO';
+import MoviesDTO from '../DTO/MoviesDTO';
+import * as backendService from '../service/backendService';
+import { raiseError } from '../utils/utils';
 import MoviesCarousel from './MoviesCarousel';
 
 export function BestMovies() {
   const [movies, setMovies] = React.useState<MoviesDTO>();
 
   React.useEffect(() => {
-    backendService.getTopRated() 
+    backendService.getAll(1) 
     .then(movies => {
-      console.log("movies = ", movies);
       setMovies(movies);
     })
     .catch(error => {
-      console.log("error = ", error);
+      raiseError(error);
     })  
   }, []);
 

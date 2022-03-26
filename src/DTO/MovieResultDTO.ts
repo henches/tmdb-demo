@@ -1,4 +1,4 @@
-type MovieResultDTO = {
+type MovieDTO = {
   poster_path: string,
   overview: string,
   original_title: string,
@@ -6,4 +6,4 @@ type MovieResultDTO = {
   id: number
 };
 
-export default MovieResultDTO;
+export default MovieDTO;

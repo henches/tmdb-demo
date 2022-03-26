@@ -1,8 +1,8 @@
-import MovieResultDTO from "./MovieResultDTO";
+import MovieDTO from "./MovieResultDTO";
 
 type MoviesDTO = {
     page: number,
-    results: MovieResultDTO[],
+    results: MovieDTO[],
     total_results: number,
     total_pages: number
 };

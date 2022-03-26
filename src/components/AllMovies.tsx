@@ -1,10 +1,10 @@
 import * as React from 'react';
-import './App.css';
-import * as backendService from './backendService';
-import GenreDTO from './DTO/GenreDTO';
-import MoviesDTO from './DTO/MoviesDTO';
+import * as backendService from '../service/backendService';
+import GenreDTO from '../DTO/GenreDTO';
+import MoviesDTO from '../DTO/MoviesDTO';
 import MoviesList from './MoviesList';
 import Pagination from './Pagination';
+import { raiseError } from '../utils/utils';
 
 const MAX_PAGES = 500;
 
@@ -20,7 +20,7 @@ export function AllMovies() {
       setGenres(genresContainer.genres);
     })
     .catch(error => {
-      console.log("error = ", error);
+      raiseError(error);
     })  
   }, []);
 
@@ -30,7 +30,7 @@ export function AllMovies() {
       setMovies(movies);
     })
     .catch(error => {
-      console.log("error = ", error);
+      raiseError(error);
     })  
   }, [page, selectedGenreId]);
 

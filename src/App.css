@@ -9,6 +9,7 @@
   --secondary-color: #586e94;
   --small-screen: 710px;
   --average-screen: 1260px;
+  --title-font-size: 20px;
 }
 
 html {
@@ -37,11 +38,8 @@ hr.solid {
 
 .title {
   font-weight: bold;
-  font-size: 16px;
+  font-size: var(--title-font-size);
   color: var(--main-color);
-}
-
-.best-movies-container {
 }
 
 .best-movies {
@@ -53,7 +51,7 @@ hr.solid {
 
 .movies-carousel {
   position: relative;
-  height: 200px;
+  height: 12rem;
   width: 90vw;
   overflow: hidden;
 }
@@ -73,7 +71,7 @@ hr.solid {
 
 .button-carousel {
   background-color: var(--select-bg-color);
-  border-radius: 100px;
+  border-radius: 100%;
   width: 3.5rem;
   height: 3rem;
   margin: 1rem;
@@ -125,6 +123,7 @@ hr.solid {
   flex-wrap: wrap;
   list-style: none;
   padding-inline-start: 0;
+  margin: 1rem 0;
 }
 
 .movies-list-mq {
@@ -189,11 +188,6 @@ hr.solid {
 }
 
 @media only screen and (max-width : 1260px) and (min-width: 710px) {
-  body {
-    padding: 1rem 1rem;
-    background-color: orange;
-  }
-
   .movies-carousel-track-mq {
     position: absolute;
     touch-action: none;
@@ -205,11 +199,6 @@ hr.solid {
 } 
 
 @media only screen and (max-width : 710px) {
-  body {
-    background-color: red;
-    padding: 1rem 1rem;
-  }
-
   .button-carousel {
     display: none;
   }
